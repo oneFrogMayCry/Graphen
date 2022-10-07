@@ -1,37 +1,38 @@
 package graph;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.util.Scanner;
+//import java.io.File;
+//import java.io.FileNotFoundException;
+//import java.util.Scanner;
 
 
-public class Matrix 
+public abstract class Matrix 
 {
 	protected int[][] matrix;
 	protected int minValue;
 	
 	public Matrix() {}
 	
-	public Matrix(File inMatrix) throws FileNotFoundException 
-	{
-			Scanner myReader = new Scanner(inMatrix);
-			
-			if(myReader.hasNextLine()) {
-				int vertexCount = myReader.nextLine().split(";").length;
-				
-				if(vertexCount > 0) {
-					setMatrix(new int[vertexCount][vertexCount]);
-				}
-				
-			}
-			myReader.close();
-	}
+//	public Matrix(File inMatrix) throws FileNotFoundException 
+//	{
+//			Scanner myReader = new Scanner(inMatrix);
+//			
+//			if(myReader.hasNextLine()) {
+//				int vertexCount = myReader.nextLine().split(";").length;
+//				
+//				if(vertexCount > 0) {
+//					setMatrix(new int[vertexCount][vertexCount]);
+//				}
+//				
+//			}
+//			myReader.close();
+//	}
 	
-	protected Matrix(int[][] inMatrix)
-	{
-		this.matrix = inMatrix;
-	}
-	
+//	protected Matrix(int[][] inMatrix)
+//	{
+//		this.matrix = inMatrix;
+//	}
+
+	// Graph.java fillMatrix
 	public boolean isFull()
 	{
 		for(int from = 0; from < matrix.length; from++) {
@@ -104,6 +105,7 @@ public class Matrix
 		return s.toString();
 	}
 	
+	// Distanz und Wege
     protected void compareMatrices(int[][] matrix) throws GraphException {
     	if ((this.matrix.length != matrix.length) || (this.matrix[0].length != matrix[0].length)) {
 			throw new GraphException("Error! -- Matrizen nicht gleich gross!");

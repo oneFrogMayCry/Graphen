@@ -177,6 +177,7 @@ public class Graph {
 	//Articulations, Bridges and Blocks
 	private void dfsABB(int vertex, int[] parent, int[] depth, int[] low, Stack<Integer[]> stack, int time)
 	{
+		//discover vertex
 		depth[vertex] = low[vertex] = ++time;
 		//System.out.println("Vertex:" + (vertex) +" -> Tiefe: " + depth[vertex] +" LOW: " + low[vertex]);
 		int children = 0;

@@ -54,16 +54,16 @@ public class AdjazenzMatrix extends Matrix{
 		return weights;
 	}
 	
-	public int getPathsForLength(int from, int to, int length) throws GraphException
-	{
-		vertexInRange(from);
-		vertexInRange(to);
-		
-		int[][] result = new int[matrix.length][matrix.length];
-				
-		for (int i = 0; i < length; i++) {
-			result = multiply(result);
-		}
-		return result[from][to];
-	}
+//	public int getPathsForLength(int from, int to, int length) throws GraphException
+//	{
+//		vertexInRange(from);
+//		vertexInRange(to);
+//		
+//		int[][] result = new int[matrix.length][matrix.length];
+//				
+//		for (int i = 0; i < length; i++) {
+//			result = multiply(result);
+//		}
+//		return result[from][to];
+//	}
 }

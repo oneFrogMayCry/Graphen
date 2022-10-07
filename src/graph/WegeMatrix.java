@@ -27,11 +27,11 @@ public class WegeMatrix extends Matrix{
 		return wegeMatrix;
 	}
 	
-	public static WegeMatrix instanzWegeMatrix(int[][] wegeMatrix) {
-		WegeMatrix wege = new WegeMatrix(wegeMatrix);
-		
-		return wege;
-	}
+//	public static WegeMatrix instanzWegeMatrix(int[][] wegeMatrix) {
+//		WegeMatrix wege = new WegeMatrix(wegeMatrix);
+//		
+//		return wege;
+//	}
 	
 	
 	public void addPaths(int[][] newPaths) throws GraphException
