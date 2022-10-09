@@ -202,7 +202,7 @@ public class Graph {
 					 
 					 //bridge
 					 if (low[nextVertex] > depth[vertex]) {
-						 //System.out.println("Bridge: "+ vertex +"-" + nextVertex);
+						 //System.out.println("Bridge: "+ vertex +" depth:"+ depth[vertex] +"< " + nextVertex + " low:" + low[nextVertex]);
 						 bridges.add(new Integer[] {vertex,nextVertex});
 					 }
 					 

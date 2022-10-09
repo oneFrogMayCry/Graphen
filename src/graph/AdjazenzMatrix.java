@@ -11,9 +11,12 @@ public class AdjazenzMatrix extends Matrix{
 		//super(inMatrix);
 		
 		Scanner myReader = new Scanner(inMatrix);
+		String[] input = null;
 		
 		if(myReader.hasNextLine()) {
-			int vertexCount = myReader.nextLine().split(";").length;
+			
+			input = myReader.nextLine().split(";");
+			int vertexCount = input.length;
 			
 			if(vertexCount > 0) {
 				setMatrix(new int[vertexCount][vertexCount]);
@@ -21,16 +24,28 @@ public class AdjazenzMatrix extends Matrix{
 		}
 		
 		int from = 0;
-		while(myReader.hasNext()) {
-			String[] input = myReader.next().split(";");
-			
-			if(input.length != matrix.length) {
-				myReader.close();
-    		    throw new GraphException("Adjazenzmatrix nicht korrekt!");
-			}	
+		if(input != null) {
+			while(myReader.hasNext()) {
+				
+				if(input.length != matrix.length) {
+					myReader.close();
+	    		    throw new GraphException("Adjazenzmatrix nicht korrekt!");
+				}	
+				int to = 0;
+				for(String element : input) {
+					//System.out.println("Element: " + element);
+					if(to >= from && to < input.length && element != null && element.equals("1")) {
+						addEdge(from, to, 1);
+					}
+					to++;
+				}
+				from++;
+				input = myReader.nextLine().split(";");
+			}
 			
 			int to = 0;
 			for(String element : input) {
+				//System.out.println("Element: " + element);
 				if(to >= from && to < input.length && element != null && element.equals("1")) {
 					addEdge(from, to, 1);
 				}
